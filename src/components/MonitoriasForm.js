@@ -7,9 +7,9 @@ const MonitoriasForm = ({ isModalCrear, setIsModalCrear, actulizarEstadoMent }) 
 
   function CrearMonitoriaModal() {
     //obtener informacion
-    const materia = document.getElementById("materia").value;
-    const fecha = document.getElementById("fecha").value;
-    const salon = document.getElementById("salon").value;
+    const materia = document.getElementById("Materia").value;
+    const fecha = document.getElementById("Fecha").value;
+    const salon = document.getElementById("Salon").value;
     //enviar info a firebase
     const infoMonitorias = { materia, fecha, salon };
     Crearmont(infoMonitorias);
@@ -32,13 +32,13 @@ const MonitoriasForm = ({ isModalCrear, setIsModalCrear, actulizarEstadoMent }) 
           <Stack>
             <Form.Group controlId="form-group-monitor-materia">
               <Form.Label>Materia</Form.Label>
-              <Form.Control controlId="1" type="text" placeholder="Materia" id='materia' />
+              <Form.Control controlId="1" type="text" placeholder="Materia" id='Materia' />
             </Form.Group>
             <Form.Group controlId="form-group-fecha-salon">
               <Form.Label>Fecha</Form.Label>
-              <Form.Control controlId="2" type="text" placeholder="Fecha" id='fecha' />
+              <Form.Control controlId="2" type="text" placeholder="Fecha" id='Fecha' />
               <Form.Label>Salon</Form.Label>
-              <Form.Control type="text" placeholder="Salon" id='salon' />
+              <Form.Control type="text" placeholder="Salon" id='Salon' />
             </Form.Group>
           </Stack>
         </Form>

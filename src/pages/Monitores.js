@@ -58,7 +58,7 @@ const Monitores = () => {
                             <td>{index + 1}</td>
                             <td>{monitores.nombres}</td>
                             <td>{monitores.apellidos}</td>
-                            <td>{monitores.programa_acad}</td>
+                            <td>{monitores.carrera}</td>
                             <td>{monitores.semestre}</td>
                             <td>{monitores.cedula}</td>
                             <td>{monitores.info_contact}</td>
