@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Stack, Button, Form, Table } from 'react-bootstrap'
 import MonitoriasForm from '../components/MonitoriasForm';
+import MonitoriasFormEdit from '../components/MonitoriasFormEdit';
 import EliminarMonitorias from '../functions/EliminarMonitorias';
 import getAllMonitoreos from '../functions/GetMonitorias'
 const Monitorias = () => {
 
     const [monitorias, setMonitoreos] = useState([]);
     const [isModalCrear, setIsModalCrear] = useState(false)
+    const [isModalEditar, setIsModalEditar] = useState(false)
+    
 
     function actulizarEstadoMent(){
         getAllMonitoreos().then((monitorias)=>{
@@ -24,10 +27,17 @@ const Monitorias = () => {
 
     return (
         <Container>
+            <h1>Monitorias</h1>
+            <hr/>
             <MonitoriasForm
             isModalCrear={isModalCrear}
             setIsModalCrear={setIsModalCrear}
             actulizarEstadoMent={actulizarEstadoMent}
+            />
+            <MonitoriasFormEdit
+                isModalEditar={isModalEditar}
+                setIsModalEditar={setIsModalEditar}
+                actulizarEstadoMent={actulizarEstadoMent}
             />
             {/* buscador */}
             <Form>
@@ -48,7 +58,7 @@ const Monitorias = () => {
             <Table>
                 <thead>
                     <tr>
-                        
+                        <th>#</th>
                         <th>Nombre de la materia</th>
                         <th>Fecha</th>
                         <th>Salon o numero del salon</th>
@@ -58,11 +68,12 @@ const Monitorias = () => {
                 <tbody>
                     {monitorias && monitorias.map((monitoreos, index)=>(
                         <tr key={index}>
+                            <td>{index + 1}</td>
                             <td>{monitoreos.Materia}</td>
                             <td>{monitoreos.Fecha}</td>
                             <td>{monitoreos.Salon}</td>
                             <td>
-                                <Button variant="primary">Editar</Button>
+                                <Button variant="primary" onClick={()=>setIsModalEditar(true)}>Editar</Button>
                                 <Button variant="danger" onClick={()=>{
                                     EliminarMonitorias(monitorias).then((confirmacion)=>{
                                         actulizarEstadoMent();

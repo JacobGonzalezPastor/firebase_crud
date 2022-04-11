@@ -3,9 +3,9 @@ import { Button, Form, Modal, Stack } from 'react-bootstrap';
 import Crearmont from '../functions/Crearmont';
 
 
-const MonitoriasForm = ({ isModalCrear, setIsModalCrear, actulizarEstadoMent }) => {
+const MonitoriasFormEdit = ({ isModalEditar, setIsModalEditar, actulizarEstadoMent, MentoriaEditar }) => {
 
-  function CrearMonitoriaModal() {
+  function EditarMonitoriaModal() {
     //obtener informacion
     const materia = document.getElementById("materia").value;
     const fecha = document.getElementById("fecha").value;
@@ -15,17 +15,17 @@ const MonitoriasForm = ({ isModalCrear, setIsModalCrear, actulizarEstadoMent }) 
     Crearmont(infoMonitorias);
     //cerrar modal
     actulizarEstadoMent();
-    setIsModalCrear(false);
+    setIsModalEditar(false);
   }
 
 
   return (
     <Modal
-      show={isModalCrear}
-      OnHide={() => setIsModalCrear(false)}
+      show={isModalEditar}
+      OnHide={() => setIsModalEditar(false)}
     >
       <Modal.Header>
-        <Modal.Title>Registrar monitorias</Modal.Title>
+        <Modal.Title>Editar monitorias</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -44,11 +44,11 @@ const MonitoriasForm = ({ isModalCrear, setIsModalCrear, actulizarEstadoMent }) 
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="danger" onClick={() => setIsModalCrear(false)}>
+        <Button variant="danger" onClick={() => setIsModalEditar(false)}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={CrearMonitoriaModal}>
-          Registrar
+        <Button variant="primary" onClick={EditarMonitoriaModal}>
+          Editar
         </Button>
       </Modal.Footer>
     </Modal>
@@ -56,4 +56,4 @@ const MonitoriasForm = ({ isModalCrear, setIsModalCrear, actulizarEstadoMent }) 
   )
 }
 
-export default MonitoriasForm
+export default MonitoriasFormEdit
