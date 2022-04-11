@@ -10,8 +10,8 @@ const BarraNav = () => {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <NavDropdown title="Lista" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Monitores</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Monitorias</NavDropdown.Item>
+          <NavDropdown.Item href="/">Monitores</NavDropdown.Item>
+          <NavDropdown.Item href="/Monitorias">Monitorias</NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>

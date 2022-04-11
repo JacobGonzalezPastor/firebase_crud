@@ -1,5 +1,4 @@
-import BarraNav from '../components/BarraNav';
-import Monitorias from '../pages/Monitorias';
+import AppRouter from '../routes/AppRouter';
 
 import '../style/App.css';
 
@@ -7,8 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <BarraNav/>
-      <Monitorias/>
+      <AppRouter />
     </div>
   );
 }
